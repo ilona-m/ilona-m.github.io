@@ -1,12 +1,22 @@
 name: Build Jekyll site
-on:
- push:
-   branches: ["main"]
+on: [push, pull_request, workflow_dispatch]
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+      - name: Install dependencies
+        run: |
+          pip install sphinx pydata_sphinx_theme myst-parser
+      - name: Sphinx build
+        run: |
+          sphinx-build edit_documentation_here/source docs
   build:
     runs-on: ubuntu-latest
     steps:
