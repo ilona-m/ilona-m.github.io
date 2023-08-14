@@ -4,7 +4,7 @@
 
 This manual aims to guide the end users in the application of InVesalius
 tools. The manual also presents some concepts to facilitate the use of the
-software. Anshul Ilona
+software. Anshul Ilona new
 
 
 ### Important Concepts
