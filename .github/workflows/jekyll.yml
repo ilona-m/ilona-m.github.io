@@ -16,6 +16,9 @@ jobs:
       - name: Install dependencies
         run: |
           pip install sphinx pydata_sphinx_theme myst-parser sphinx-design
+      - name: Clean
+        run: |
+          rm -f docs
       - name: Sphinx build
         run: |
           sphinx-build -b html edit_documentation_here/source docs
