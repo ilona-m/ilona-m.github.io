@@ -14,14 +14,14 @@ jobs:
         uses: actions/checkout@v3
       - name: Clean
         run: |
-          sudo rm -f docs && sudo mkdir docs && cd docs && sudo touch .gitkeep && cd ..
+          sudo rm -f docs && sudo mkdir docs && cd docs && sudo touch .gitkeep && ls && cd ..
       - uses: actions/setup-python@v3
       - name: Install dependencies
         run: |
           pip install sphinx pydata_sphinx_theme myst-parser sphinx-design
       - name: Sphinx build
         run: |
-          sphinx-build -b html edit_documentation_here/source docs
+          sudo sphinx-build -b html edit_documentation_here/source docs
       - name: Commit documentation changes
         run: |
           git clone https://github.com/ilona-m/ilona-m.github.io.git
