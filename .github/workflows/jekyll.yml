@@ -18,10 +18,10 @@ jobs:
           pip install sphinx pydata_sphinx_theme myst-parser sphinx-design
       - name: Clean
         run: |
-          cd edit_documentation_here/source
+          rm docs && cd edit_documentation_here/source
       - name: Sphinx build
         run: |
-          make clean && make html
+          make html
   build:
     runs-on: ubuntu-latest
     needs: docs
