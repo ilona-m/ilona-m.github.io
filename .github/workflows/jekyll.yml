@@ -22,9 +22,6 @@ jobs:
       - name: Sphinx build
         run: |
           sphinx-build -b html edit_documentation_here/source docs
-      - name: Check
-        run: |
-          cd docs && ls docs && cd ..
   build:
     runs-on: ubuntu-latest
     needs: docs
