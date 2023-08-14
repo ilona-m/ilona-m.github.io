@@ -3,3 +3,5 @@ _site/
 .jekyll-metadata
 .DS_Store
 edit_documentation_here/.venv
+Gemfile
+Gemfile.lock
