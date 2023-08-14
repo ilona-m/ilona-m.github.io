@@ -5,7 +5,7 @@ on:
     branches: ["main"]
   
   workflow_dispatch:
-  
+
 permissions:
   contents: write
   pages: write
@@ -28,13 +28,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - uses: actions/setup-python@v3
-      - name: Install dependencies
-        run: |
-          pip install sphinx pydata_sphinx_theme myst-parser
-      - name: Sphinx build
-        run: |
-          sphinx-build edit_documentation_here/source docs
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Build
