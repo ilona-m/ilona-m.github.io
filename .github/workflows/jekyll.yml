@@ -21,7 +21,7 @@ jobs:
           pip install sphinx pydata_sphinx_theme myst-parser sphinx-design
       - name: Sphinx build
         run: |
-          sphinx-build -b html edit_documentation_here/source /docs
+          sphinx-build edit_documentation_here/source docs
   build:
     runs-on: ubuntu-latest
     needs: docs
