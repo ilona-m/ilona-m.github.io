@@ -15,6 +15,9 @@ jobs:
       - name: Clean
         run: |
           rm -f docs
+      - name: Check
+        run: |
+          cd docs && ls docs && cd ..
       - uses: actions/setup-python@v3
       - name: Install dependencies
         run: |
