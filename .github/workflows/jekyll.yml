@@ -21,7 +21,7 @@ jobs:
           pip install sphinx pydata_sphinx_theme myst-parser sphinx-design
       - name: Sphinx build
         run: |
-          sudo sphinx-build -b html edit_documentation_here/source docs
+          sphinx-build -b html edit_documentation_here/source docs
       - name: Commit documentation changes
         run: |
           git config --local user.email "action@github.com"
