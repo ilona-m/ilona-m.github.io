@@ -15,9 +15,6 @@ jobs:
       - name: Clean
         run: |
           rm -f docs
-      - name: Check
-        run: |
-          cd docs && ls docs && cd ..
       - uses: actions/setup-python@v3
       - name: Install dependencies
         run: |
@@ -25,6 +22,9 @@ jobs:
       - name: Sphinx build
         run: |
           sphinx-build edit_documentation_here/source docs
+      - name: Check
+        run: |
+          cd docs && ls docs && cd ..
   build:
     runs-on: ubuntu-latest
     needs: docs
