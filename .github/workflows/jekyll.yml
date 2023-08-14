@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Clean
+        run: |
+          rm -f docs && mkdir docs && cd docs && touch .gitkeep && cd ..
       - uses: actions/setup-python@v3
       - name: Install dependencies
         run: |
@@ -22,7 +25,7 @@ jobs:
       - name: Commit documentation changes
         run: |
           git clone https://github.com/ilona-m/ilona-m.github.io.git
-          sudo cp -r docs/* docs/
+          sudo cp -r docs/* /docs
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
